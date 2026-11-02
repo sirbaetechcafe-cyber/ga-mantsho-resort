@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0756c9">
+
+  <title>Ga Mantsho Resort | Accommodation & Bookings</title>
+
+  <meta name="description" content="Discover Ga Mantsho Resort in Modjadji, Tzaneen, Limpopo. Explore accommodation, view room rates and book online.">
+
+  <style>
+    :root {
+      --blue: #0756c9;
+      --dark: #073579;
+      --light: #eef5ff;
+      --white: #ffffff;
+      --text: #243247;
+      --muted: #66758a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f7f9fc;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 13px;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 3px 15px rgba(0,0,0,.07);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      color: var(--blue);
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 19px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #26374d;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .nav-book {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 17px;
+      border-radius: 7px;
+    }
+
+    .hero {
+      min-height: 520px;
+      padding: 90px 22px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(115deg, rgba(4,34,83,.94), rgba(7,86,201,.78)),
+        linear-gradient(135deg, #073579, #3184df);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #b9d8ff;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.1;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 17px;
+      color: #e1edff;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-light {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 22px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading small {
+      color: var(--blue);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: 32px;
+      color: var(--dark);
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .intro-box {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.05);
+    }
+
+    .intro-box h2 {
+      color: var(--dark);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .intro-box p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .feature-panel {
+      background: linear-gradient(140deg, #073579, #0756c9);
+      padding: 35px;
+      border-radius: 14px;
+      color: white;
+    }
+
+    .feature-panel h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .feature-panel ul {
+      padding-left: 20px;
+    }
+
+    .feature-panel li {
+      margin: 10px 0;
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .room-card {
+      background: white;
+      border: 1px solid #e5eaf1;
+      padding: 24px 15px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.035);
+    }
+
+    .room-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .room-card h3 {
+      color: var(--dark);
+      font-size: 17px;
+    }
+
+    .room-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .rates-section {
+      background: var(--light);
+    }
+
+    .rates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rate-card {
+      background: white;
+      border-radius: 13px;
+      padding: 30px 22px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .rate-card h3 {
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--blue);
+      font-size: 34px;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+
+    .rate-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .rate-note {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 25px;
+    }
+
+    .gallery-panel {
+      background: linear-gradient(120deg, #073579, #1269cf);
+      border-radius: 16px;
+      padding: 45px 25px;
+      text-align: center;
+      color: white;
+    }
+
+    .gallery-panel h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .gallery-panel p {
+      max-width: 620px;
+      margin: 0 auto 22px;
+      color: #e1edff;
+    }
+
+    .booking-panel {
+      background: white;
+      border: 1px solid #e4eaf2;
+      padding: 35px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.04);
+    }
+
+    .booking-panel h2 {
+      color: var(--dark);
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .booking-panel p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 24px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid #e6ebf2;
+    }
+
+    .contact-card h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    footer {
+      background: #061f48;
+      color: white;
+      padding: 35px 22px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #d4e2f5;
+      font-size: 13px;
+      margin: 7px 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 200;
+      background: #168b50;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 35px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    }
+
+    @media(max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rates-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 460px;
+        padding: 70px 22px;
+      }
+    }
+
+    @media(max-width: 420px) {
+      nav a {
+        font-size: 12px;
+      }
+
+      .rooms-grid {
+        gap: 9px;
+      }
+
+      .room-card {
+        padding: 18px 8px;
+      }
+
+      .container {
+        padding: 48px 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    GA MANTSHO RESORT • MODJADJI, TZAANEN • LIMPOPO
+  </div>
+
+  <header>
+    <div class="navbar">
+      <a class="logo" href="#home">
+        GA MANTSHO RESORT
+        <span>PTY LTD</span>
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#rates">Rates</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-book" href="#booking">Book Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to Ga Mantsho Resort</div>
+
+        <h1>Your Stay. Your Comfort. Your Experience.</h1>
+
+        <p>
+          Discover Ga Mantsho Resort, located in Modjadji,
+          Tzaneen, Limpopo. Explore our accommodation,
+          view our packages and make your reservation online.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-white" href="#booking">Book Your Stay</a>
+          <a class="btn btn-outline" href="#gallery">Explore Accommodation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <div class="intro-grid">
+
+        <div class="intro-box">
+          <h2>Welcome to Ga Mantsho Resort</h2>
+
+          <p>
+            Ga Mantsho Resort (Pty) Ltd welcomes guests
+            looking for accommodation in Modjadji,
+            Tzaneen, Limpopo.
+          </p>
+
+          <p>
+            Whether you need a short stay, a day or night
+            package, or an extended stay, contact our
+            reception team to explore your options.
+          </p>
+
+          <a class="btn btn-blue"
+             href="https://sites.google.com/view/gamantshoresort"
+             target="_blank" rel="noopener">
+            Discover More About Us
+          </a>
+        </div>
+
+        <div class="feature-panel">
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>Convenient accommodation packages</li>
+            <li>Online booking enquiries</li>
+            <li>Multiple room options</li>
+            <li>Reception assistance</li>
+            <li>Flexible extended-stay enquiries</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" id="rooms">
+      <div class="section-heading">
+        <small>Accommodation</small>
+        <h2>Explore Our Rooms</h2>
+        <p>
+          Ga Mantsho Resort has eight rooms.
+          Contact reception to confirm availability
+          and your preferred accommodation.
+        </p>
+      </div>
+
+      <div class="rooms-grid">
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 1</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 2</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 3</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 4</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 5</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 6</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 7</h3>
+          <p>View details and availability</p>
+        </div>
+
+        <div class="room-card">
+          <div class="room-icon">🛏️</div>
+          <h3>Room 8</h3>
+          <p>View details and availability</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:28px">
+        <a class="btn btn-blue"
+           href="https://sites.google.com/view/gamantshoresort"
+           target="_blank" rel="noopener">
+          View Accommodation Photos & Details
+        </a>
+      </div>
+    </section>
+
+    <section class="rates-section" id="rates">
+      <div class="container">
+
+        <div class="section-heading">
+          <small>Our Packages</small>
+          <h2>Room Rates</h2>
+          <p>
+            Choose a package that suits your stay.
+            Please confirm availability with reception
+            before making payment.
+          </p>
+        </div>
+
+        <div class="rates-grid">
+
+          <div class="rate-card">
+            <h3>1 Hour</h3>
+            <div class="price">R150</div>
+            <p>Short-stay accommodation package.</p>
+            <a class="btn btn-light" href="#booking">Book Now</a>
+          </div>
+
+          <div class="rate-card">
+            <h3>3 Hours</h3>
+            <div class="price">R200</div>
+            <p>Three-hour accommodation package.</p>
+            <a class="btn btn-blue" href="#booking">Book Now</a>
+          </div>
+
+          <div class="rate-card">
+            <h3>12 Hours</h3>
+            <div class="price">R350</div>
+            <p>Day or night accommodation package.</p>
+            <a class="btn btn-light" href="#booking">Book Now</a>
+          </div>
+
+        </div>
+
+        <p class="rate-note">
+          <strong>Multiple Days / Extended Stay:</strong>
+          Contact management for a quotation.
+        </p>
+
+        <div style="text-align:center;margin-top:25px">
+          <a class="btn btn-blue"
+             href="https://sites.google.com/view/gamantshoresort"
+             target="_blank" rel="noopener">
+            View Full Resort Information & Rates
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" id="gallery">
+      <div class="gallery-panel">
+        <h2>Take a Look Around</h2>
+
+        <p>
+          Want to see our accommodation and resort
+          before booking? Visit our Google Sites page
+          to explore the available photos and information.
+        </p>
+
+        <a class="btn btn-white"
+           href="https://sites.google.com/view/gamantshoresort"
+           target="_blank" rel="noopener">
+          View Accommodation Gallery
+        </a>
+      </div>
+    </section>
+
+    <section class="container" id="booking">
+      <div class="booking-panel">
+        <div class="section-heading">
+          <small>Reservations</small>
+          <h2>Book Your Stay Online</h2>
+          <p>
+            Ready to make a reservation?
+            Use our online booking system to submit
+            your booking details.
+          </p>
+        </div>
+
+        <a class="btn btn-blue"
+           href="https://script.google.com/macros/s/AKfycbxmVLbKq7-Nfoar5guK9n6WKRD5a2s4LByJb_tL3jKgcWqK9Ft6l7uoJKqEjboVGVefyA/exec"
+           target="_blank" rel="noopener">
+          Apply / Book Online
+        </a>
+
+        <p style="margin-top:20px;font-size:13px">
+          Submitting a booking request does not automatically
+          guarantee a reservation. Please wait for confirmation
+          from the resort.
+        </p>
+
+        <a class="btn btn-light"
+           href="https://wa.me/27833590154?text=Hello%20Ga%20Mantsho%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry."
+           target="_blank" rel="noopener">
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="section-heading">
+        <small>Get in Touch</small>
+        <h2>Contact Ga Mantsho Resort</h2>
+        <p>
+          Our reception team is available to assist
+          with accommodation and booking enquiries.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Call Reception</h3>
+          <p>
+            <a href="tel:0720723554">072 072 3554</a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>WhatsApp</h3>
+          <p>
+            <a href="https://wa.me/27833590154"
+               target="_blank" rel="noopener">
+              083 359 0154
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:mantshoresort@gmail.com">
+              mantshoresort@gmail.com
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="intro-box" style="margin-top:22px;text-align:center">
+        <h3 style="color:#073579;margin-bottom:10px">
+          Find Us
+        </h3>
+        <p>
+          Stand No 2060, Modjadji, Tzaneen,
+          Limpopo, South Africa.
+        </p>
+        <a class="btn btn-blue"
+           href="https://www.google.com/maps/search/?api=1&query=Stand+No+2060+Modjadji+Tzaneen+Limpopo"
+           target="_blank" rel="noopener">
+          Find Us on Google Maps
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>GA MANTSHO RESORT (PTY) LTD</h2>
+
+    <p>Accommodation • Reservations • Guest Services</p>
+
+    <p>
+      Stand No 2060, Modjadji, Tzaneen,
+      Limpopo, South Africa.
+    </p>
+
+    <p>
+      <a href="https://sites.google.com/view/gamantshoresort"
+         target="_blank" rel="noopener">
+        Visit Our Google Sites Website
+      </a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Ga Mantsho Resort (Pty) Ltd.
+      All rights reserved.
+    </p>
+
+    <p>Website powered by Netlify.</p>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/27833590154?text=Hello%20Ga%20Mantsho%20Resort"
+     target="_blank" rel="noopener">
+    WhatsApp Us
+  </a>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
